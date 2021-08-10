@@ -1,6 +1,23 @@
-# ios_app
+# Swift
 
-Swift 기본 사용법 
+## 클래스와 객체
+
+- 클래스(Class) : 같은 종류(또는 문제 해결을 위한)의 집단에 속하는 속성과 행위를 정의한 것
+- 객체(Object) : 클래스의 인스턴스(실제로 메모리에 할당되어 동작하는 모양을 갖춘 것, instance)
+- 매서드(Method) or 메세지(message) : 객체가 클래스에 정의된 행위를 실질적으로 하는 함수
+
+## 명령형 VS 함수형 프로그래밍
+
+|   | 명령형 프로그래밍 | 함수형 프로그래밍 |
+| :------------ | :-----------: | -------------------: |
+| 프로그래머가 초점을 두는 곳 | 작업 수행 알고리즘, 상태의 변경 추적 | 원하는 정보, 필요한 변환 |
+| 상태 변경 | 중요 | 없음 |
+| 실행 순서 | 중요 | 낮은 중요도 |
+| 주요 흐름 제어 | 제어 구문(반복문, 조건문 등), 함수(매서드) 호출 | 순환(재귀)함수 호출 등의 함수 호출로 제어 |
+| 주요 조작 단위 | 클래스나 구조체의 인스턴스 | 함수 |
+
+
+# 문법
 
 ## 명명규칙
 - 소문자 Camel Case : 함수, 메서드, 변수, 상수
@@ -96,35 +113,170 @@ var number
 number = 2  // error발생
 ```
 
+## 난수 만들기
+```swift
+Int.random(in: -100...100)
+UInt.random(in: 1...30 )
+Double.random(in: 1.5...4.3)
+Float.random(in: -0.5...1.5)
+```
+
+## 문자열
+- 문자열 합성
+```swift
+var introduce = "저의 이름은 : "
+introduce.append("PBH")
+
+introduce = introduce + " 입니다."
+```
+- 문자열 카운트
+```swift
+var Hi = "hello Swift!"
+print("글자수 확인 : \(Hi.count)")
+print("비어있는 변수 확인 " \(Hi.isEmpty)")
+```
+- 문자열 비교
+```swift
+var check : Bool = false
+var hello = "hello"
+check = hello == "hello"
+// True
+check = hello == "Hello"
+//false
+```
+- 접두어, 접미어 확인
+```swift
+// 접두어
+var hello = "hello"
+hello.hasPrefix("he")
+// 접미어
+hello.hasSuffix("llo")
+```
+- 대소문자 변경
+```swift
+var hello = "hello"
+hello.uppercased()  // HELLO
+hello.lowercased()  // hello
+```
+
+## 특수문자
+- \n : 줄바꿈 문자
+- \\ : 문자열 내에서 백슬래시 표현
+- \" : 문자열 내에서 큰따움표 표현
+- \t : 탭 문자
+- \0 : NUll 문자
+
+## Any
+- 어떤 종류의 데이터 타입으로도 할당 할 수 있는 타입
+```swift
+var some : Any = "hello world"
+some = 100
+some = 1.22
+```
+
 ## 컬렉션 1
 - 튜플 : 지정된 데이터의 묶음. 파이선의 튜플과 유사, 타입이름은 따로없고 일정타입의 나열생성됨
 ```swift
  var cat: (name:String, age:Int, size:String) = ("name",2,"big")
+ cat.name = "dog"   // 요소의 이름을 통해 접근
+ cat.2 = 4  // 요소의 인덱스를 통해 접근
 ```
 - 배열 : 같은 타입의 데이터를 일렬로 순서대로 저장하는 형태의 컬렉션
 ```swift
  var names: Array<String> = ["inswave","rnd1","rnd2"]
- var names:[String]
+ var names: [String] = ["inswave","rnd1","rnd2"]
+
+ var emptyArray : [Any] = [Any]()   // Any 데이터를 요소로 갖는 빈 배열 생성
+ var emptyArray : [Any] = Array<Any>()   // Any 데이터를 요소로 갖는 빈 배열 생성
+ var emptyArray : [Any] = []   // Any 데이터를 요소로 갖는 빈 배열 생성
+```
+```swift
+// 배열의 사용
+var names : [Any] = ["hi", "hello", "swift"]
+names[2] = "world"
+names.append("python")
+names.append(contentsOf:["js", "html"])
+names.insert("happy", at:2)
+names.removeFirst()
+names.removeLasr()
+names.remove(at:2)
+print(names[1...3])
 ```
 
 ## 컬렉션 2
-- 딕셔너리 : 순서없이 키와 값의 쌍으로 구성되는 컬렉션
+- 딕셔너리 : 순서없이 키(unikey)와 값의 쌍으로 구성되는 컬렉션
 ```swift
  var codeForName: Dictionary<String, Int> = Dictionary<String,Int>()
  var codeForName:[String,Int] = [String:Int]()
  var codeForName:[String,Int] = [:]
+
+ var names : [Any, Any] = ["a" : 1, "b" : 2, "c" : 3]
+ names["a"] // 1
+ names["b"] = 4
+ names.removeValue(forKey: "c")
+ names["c", defult:0]
 ```
 
 ## 컬렉션 3
 - 세트 : 같은타입의 데이터를 순서없이 하나의 묶음으로 저장, 중복없음
+- 내부의 값이 모두 유일하기 때문에 집합관계를 표현할 때 유용하다
 ```swift
+// 타입(Set)을 지정해주지 않으면 Array로 인식
  var codes: Set<String> = Set<String>()
  let 새: Set<String> = ["비둘기","닭","꿩","매"]
 ```
-- 열거형 : 연관된 항목들을 묶어서 표현, enum키워드를 사용하여 생성
+```swift
+// Set의 활용
+let englishClass : Set<String> = ["jon", "Kim", "haha"]
+let koreaClass : Set<String> = ["jon", "Nana", "Ou"]
+
+// 교집합
+let intersectSet : Set<String> = englishClass.intersection(koreaClass)
+
+// 여집합
+let intersectSet : Set<String> = englishClass.symmetricDiffernce(koreaClass)
+
+// 합집합
+let intersectSet : Set<String> = englishClass.union(koreaClass)
+
+// 차집합
+let intersectSet : Set<String> = englishClass.subtracting(koreaClass)
+
+// 정렬
+koreaClass.sorted()
+
+// 서로 배타적(다른)인가 true
+새.isDisjoint(with : 포유류)
+
+// 새가 동물의 부분 집합인가 true
+새.isSubset(of: 동물)
+
+// 동물은 포유류의 전체집합인가 true
+동물.isSuperset(of : 포유류)
+```
+
+## randomElement(), shuffle(), shuffled()
+- randomElement : 임의의 요소 추출
+- shuffle : 컬렉션 섞기
+- shuffled : 기존의 컬렉션을 이용하여 섞인 새로운 컬렉션 생성
+
+## 열거형 
+- 연관된 항목들을 묶어서 표현, enum키워드를 사용하여 생성
 ```swift
  enum School { case primary, elementary, middle, high }
+
+ print(School.allCases)
 ```
+
+## 비교 연산자
+- A === B : 같은 인스턴스를 가르키는지 결과값 Bool 반환
+- A !== B : 참조가 같지 않다
+- A ~= B : A와 B의 패턴이 매치되는지 확인
+
+## 범위 연산자
+- 폐쇠 범위 연산자 : A...B
+- 반폐쇠 범위 연산자 : A.. < B
+- 단방향 범위 연산자 : A... or ...A or .. < A
 
 ## 조건문
 - if문 : 정수,실수 등 0이 아닌 모든 값을 참으로 취급하여 조건 값이 될 수 있었던 다른언어와 달리 스위프트는 조건값이 꼭 Bool 타입이어야한다.
