@@ -487,3 +487,170 @@ print("my friend age is \(myFriend.age)") // 29
     - 타입 메서드 : 타입자체에서 호출이 가능한 메서드
 - 접근제어 : 코드끼리 상호작용할 때 파일 간 또는 모듈간에 접근을 제한 할 수 있는 기능, 접근제어를 통해 구현은 숨기고 허용된 기능만 노출할 수 있음.
 
+## Foundation Framework
+```swift
+import Combine
+import CoreFoundation
+import CoreGraphics
+import Darwin
+import Darwin.uuid
+import Dispatch
+import Foundation.FoundationErrors
+import Foundation.FoundationLegacySwiftCompatibility
+import Foundation.NSArray
+import Foundation.NSAttributedString
+import Foundation.NSAutoreleasePool
+import Foundation.NSBundle
+import Foundation.NSByteCountFormatter
+import Foundation.NSByteOrder
+import Foundation.NSCache
+import Foundation.NSCalendar
+import Foundation.NSCharacterSet
+import Foundation.NSCoder
+import Foundation.NSComparisonPredicate
+import Foundation.NSCompoundPredicate
+import Foundation.NSData
+import Foundation.NSDate
+import Foundation.NSDateComponentsFormatter
+import Foundation.NSDateFormatter
+import Foundation.NSDateInterval
+import Foundation.NSDateIntervalFormatter
+import Foundation.NSDecimal
+import Foundation.NSDecimalNumber
+import Foundation.NSDictionary
+import Foundation.NSEnergyFormatter
+import Foundation.NSEnumerator
+import Foundation.NSError
+import Foundation.NSException
+import Foundation.NSExpression
+import Foundation.NSExtensionContext
+import Foundation.NSExtensionItem
+import Foundation.NSExtensionRequestHandling
+import Foundation.NSFileCoordinator
+import Foundation.NSFileHandle
+import Foundation.NSFileManager
+import Foundation.NSFilePresenter
+import Foundation.NSFileVersion
+import Foundation.NSFileWrapper
+import Foundation.NSFormatter
+import Foundation.NSHTTPCookie
+import Foundation.NSHTTPCookieStorage
+import Foundation.NSHashTable
+import Foundation.NSISO8601DateFormatter
+import Foundation.NSIndexPath
+import Foundation.NSIndexSet
+import Foundation.NSInvocation
+import Foundation.NSItemProvider
+import Foundation.NSJSONSerialization
+import Foundation.NSKeyValueCoding
+import Foundation.NSKeyValueObserving
+import Foundation.NSKeyedArchiver
+import Foundation.NSLengthFormatter
+import Foundation.NSLinguisticTagger
+import Foundation.NSListFormatter
+import Foundation.NSLocale
+import Foundation.NSLock
+import Foundation.NSMapTable
+import Foundation.NSMassFormatter
+import Foundation.NSMeasurement
+import Foundation.NSMeasurementFormatter
+import Foundation.NSMetadata
+import Foundation.NSMetadataAttributes
+import Foundation.NSMethodSignature
+import Foundation.NSNetServices
+import Foundation.NSNotification
+import Foundation.NSNotificationQueue
+import Foundation.NSNull
+import Foundation.NSNumberFormatter
+import Foundation.NSObjCRuntime
+import Foundation.NSObject
+import Foundation.NSOperation
+import Foundation.NSOrderedCollectionChange
+import Foundation.NSOrderedCollectionDifference
+import Foundation.NSOrderedSet
+import Foundation.NSOrthography
+import Foundation.NSPathUtilities
+import Foundation.NSPersonNameComponents
+import Foundation.NSPersonNameComponentsFormatter
+import Foundation.NSPointerArray
+import Foundation.NSPointerFunctions
+import Foundation.NSPort
+import Foundation.NSPredicate
+import Foundation.NSProcessInfo
+import Foundation.NSProgress
+import Foundation.NSPropertyList
+import Foundation.NSProxy
+import Foundation.NSRange
+import Foundation.NSRegularExpression
+import Foundation.NSRelativeDateTimeFormatter
+import Foundation.NSRunLoop
+import Foundation.NSScanner
+import Foundation.NSSet
+import Foundation.NSSortDescriptor
+import Foundation.NSStream
+import Foundation.NSString
+import Foundation.NSTextCheckingResult
+import Foundation.NSThread
+import Foundation.NSTimeZone
+import Foundation.NSTimer
+import Foundation.NSURL
+import Foundation.NSURLAuthenticationChallenge
+import Foundation.NSURLCache
+import Foundation.NSURLConnection
+import Foundation.NSURLError
+import Foundation.NSURLProtectionSpace
+import Foundation.NSURLProtocol
+import Foundation.NSURLRequest
+import Foundation.NSURLResponse
+import Foundation.NSURLSession
+import Foundation.NSUUID
+import Foundation.NSUbiquitousKeyValueStore
+import Foundation.NSUndoManager
+import Foundation.NSUnit
+import Foundation.NSUserActivity
+import Foundation.NSUserDefaults
+import Foundation.NSValueTransformer
+import Foundation.NSXMLParser
+import Foundation.NSXPCConnection
+import Foundation.NSZone
+import Foundation
+import Foundation.NSURLCredential
+import Foundation.NSURLCredentialStorage
+import Foundation.NSValue
+import ObjectiveC
+```
+
+### Fundamentals
+- Numbers, Data, and Basic Value : Int, Double 비롯한 기본적인 변수 사용
+- String and Text : String에 관련된 처리들
+- Collections : Array, Dictionary, Set등 list와 관련된 처리
+- Dates and Times : 날짜와 시간 처리
+- Units and Measurement
+- Data Formatting
+- Filters and Sorting : 배열의 검사 및 정렬에 관련된 처리
+
+### App Support
+- Task Management
+- Resources : 리소스와 관련된 처리
+- Notifications : Notification Center 등에 관련된 처리
+- App Extension Support 
+- Errors and Exceptions
+- Scripting Support
+
+### Files and Data Persistence
+- File System
+- Archives and Serialization
+- Preferences
+- Spotlight
+- iCloud
+
+### Networking
+- URL Loading System : URLSession등 네트워킹과 관련된 처리
+- Bonjour
+
+### Low-Level Utilities
+- XPC
+- Object Runtime
+- Processes and Threads
+- Streams, Sockets, and Ports
+
